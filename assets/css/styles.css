@@ -1,25 +1,40 @@
+/*universal selector for text color and background*/
 * {
-    background-color: #2B2D42;
+    background-color: var(--color5);
     color: white;
 }
 
+/*root for colors*/
+:root {
+    --color1: #8C271E;
+    --color2: #FF6392;
+    --color3: #8A95A5;
+    --color4: #D5C67A;
+    --color5: #2B2D42;
+}
+
+/*Aligns header to the left side*/
 header {
     width: 80%;
     text-align: center;
     margin: 250px 20px;
 }
 
+/*Font for h1*/
 h1 {
     font-size: 70px;
     margin: 50px 50px 15px 0px;
-    color: #D5C67A;
+    color: var(--color4);
 }
 
+/*Font for h2*/
 h2 {
     font-size: 30px;
     margin: 30px 50px 15px 0px;
+    color: var(--color2);
 }
 
+/*Font for paragraphs*/
 p { 
     font-size: 18px;
     margin: 15px 50px 15px 0px;
@@ -27,23 +42,25 @@ p {
 
 }
 
+/*Gets rid of underline*/
 a {
     text-decoration: none;
 }
 
+/*Container for whole*/
 .flex-container {
     display: flex;
     flex-direction: row;
 }
 
+/*Container for the right side*/
 .flex-container-2 {
     display: flex;
     flex-direction: column;
     width: 100%;
 }
 
-
-
+/*Settings for tabs*/
 .tabs {
     margin: 40px;
     padding: 10px;
@@ -54,52 +71,116 @@ a {
     gap: 20px;
 }
 
+/*Tabs changes size when hover*/
 #aboutTab:hover, #projectsTab:hover, #contactTab:hover {
     font-size: 26px;
 }
 
+/*Puts sections into flex containers*/
 #about, #projects, #contact {
     display: flex;
     flex-direction: column;
 }
 
+/*Settings for experience section*/
 .experience {
     margin: 20px;
     padding: 20px;
     border: solid;
-    border-radius: 2px;
-    border-color: #8A95A5;
+    border-radius: 15px;
+    border-color: var(--color3);
+    font-size: 20px;
 }
 
+/*Adds pink border and grows when hover*/
+.experience:hover {
+    border-color: #FF6392;
+    font-size: 24px;
+}
+
+/*Aligns buttons*/
 .contactButtons {
     display: flex;
     flex-direction: row;
     gap: 40px;
 }
 
+/*Settings for buttons*/
 .fa-facebook, .fa-envelope, .fa-linkedin, .fa-twitter, .fa-instagram {
     margin: 0px 50px 50px 0px;
     font-size: 2em;
 }
 
+/*changes buttons color when hover*/
 .fa-facebook:hover, .fa-envelope:hover, .fa-linkedin:hover, .fa-twitter:hover, .fa-instagram:hover {
-    color: #8C271E;
+    color: var(--color1);
 }
 
+/*Title and subtitle settings*/
 #name, #subname{
     margin: 40px;
-    color: #D5C67A;
+    color: var(--color4);
+}
+
+/*main img settings*/
+#mainImg {
+    object-fit: cover;
+    width: 100%;
+    height: 500px;
+    filter: blur(5px);
+}
+
+/*small img settings*/
+.projectImg {
+    object-fit: cover;
+    width: 100%;
+    height: 250px;
+    filter: blur(5px);
+}
+
+/*Gets rid of blur when hover*/
+#mainImg:hover, .projectImg:hover {
+    filter: blur(0px);
+}
+
+/*Puts projects in grid formation*/
+.grid { 
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+}
+
+/*settings for project images*/
+.project {
+    margin: 10px 20px 10px 0px;
+    border: solid;
+    border-width: 10px;
+    border-color: var(--color4);
 }
 
 
-colors {
-    color: #2B2D42;
-    color: #8C271E;
-    color: #D5C67A;
-    color: #8A95A5;
-    color: #FF6392;
+/*When viewport is small centers the webpage*/
+@media all and (max-width: 1120px) {
+    .flex-container {
+        flex-direction: column;
+    }
+
+    header {
+        width: 100%;
+    }
+
+    .flex-container-2 {
+        margin: 30px;
+        width: auto;
+    }
+
+    .contactButtons {
+        justify-content: center;
+    }
+
+    h1, h2 {
+        text-align: center;
+    }
 
 }
-
-
 
